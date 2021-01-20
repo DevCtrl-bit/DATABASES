@@ -38,6 +38,18 @@ print("Tabla BoughtItem creada.")
 print("-----------------------------------------------------")
 print("Introduciendo datos...")
 
+"""PODEMOS INTRODUCIR DATOS COMO VARIABLES"""
+
+query = """
+     INSERT INTO credit
+         (bank, number, card, int1, value, type, int2)
+     VALUES
+          (?, ?, ?, ?, ?, ?, ?)
+        """
+data =  ['Citi', '5567', 'visa', 6000, 9.99, '23', 9000]
+
+cursor.execute(query, data)
+
 cur.execute('''INSERT INTO Customer(firstname, lastname)
                VALUES ('Bob', 'Adams'),
                       ('Amy', 'Smith'),
